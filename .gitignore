@@ -1,0 +1,17 @@
+.venv/
+raw_videos/
+raw_images/
+raw_images_rejected/
+frames/
+frames_rejected/
+__pycache__/
+.DS_Store
+datasets/
+runs/
+*.pt
+!weights/best.pt
+*.ts
+frames_mix/
+frames_mix_rejected/
+.omc/
+archive_local/

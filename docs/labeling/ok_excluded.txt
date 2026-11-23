@@ -1,0 +1,13 @@
+# ok 묶음에서 학습에 쓰지 않는 사진 (박스가 봉지 일부만 감싸거나 너무 큼). 한 줄에 파일 이름 하나, # 뒤는 메모
+piezza_a_00480.jpg  # 위쪽 2/3만
+piezza_a_00619.jpg  # 위쪽만
+piezza_b_00040.jpg  # 위쪽만 (손에 든 봉지)
+piezza_b_00050.jpg  # 위쪽만
+piezza_b_00069.jpg  # 아래쪽 빠짐
+piezza_b_00150.jpg  # 옆면, 아래쪽 빠짐
+piezza_b_00160.jpg  # 옆면, 아래쪽 빠짐
+piezza_b_00181.jpg  # 옆면, 아래쪽 빠짐
+piezza_b_00200.jpg  # 위쪽만
+piezza_b_00218.jpg  # 옆면, 아래쪽 빠짐
+piezza_b_00220.jpg  # 옆면, 아래쪽 빠짐
+frenchpie_a_00252.jpg  # 박스가 봉지보다 위로 큼
