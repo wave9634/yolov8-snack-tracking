@@ -18,7 +18,7 @@
 
 클래스별 test mAP50-95는 bigpie 0.962, frenchpie 0.895, piezza 0.936입니다.
 
-결과 영상은 학습에 쓰지 않은 영상에서 손으로 과자 순서를 바꾸는 5초 구간입니다. 빅파이 #1과 후렌치파이 #2는 5초 내내, 피자과자 #3은 0.3~4.8초 동안 같은 ID로 추적됩니다.
+결과 영상은 학습에 쓰지 않은 영상에서 손으로 과자 순서를 바꾸는 5초 구간입니다. 150프레임 모두에서 세 과자를 감지했고, 후렌치파이 #2와 피자과자 #3은 5초 내내 같은 ID로 추적됩니다. 빅파이는 손으로 집어 옮기는 4.2초쯤 ID가 #1에서 #9로 바뀝니다.
 
 ## 구성
 
@@ -70,7 +70,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python train.py --data datasets/snacks/data.yaml
 
 # 5. 추적 (5초)
-.venv/bin/python track.py raw_videos/test/test_03.mp4 --start 2.5 --conf 0.4 --tracker botsort.yaml --buffer-sec 2
+.venv/bin/python track.py raw_videos/test/test_04.mp4 --start 9.5 --conf 0.4 --tracker botsort.yaml --buffer-sec 2
 ```
 
 학습 설정은 YOLOv8n, imgsz 640, batch 16, 최대 100 epoch입니다. 75 epoch에서 조기 종료됐고 M2 Max GPU(`mps`)에서 26분 걸렸습니다.
@@ -84,5 +84,5 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 ## 한계
 
-- 손이 과자를 덮는 순간에는 박스가 손까지 크게 잡히거나 1~2프레임짜리 엉뚱한 박스가 생깁니다.
-- 폰을 손에 들고 찍어서 궤적에 과자 움직임과 화면 움직임이 섞여 있습니다.
+- 손이 과자를 덮거나 집어 옮기면 박스가 손까지 크게 잡히거나 ID가 새로 붙습니다.
+- 학습 때 본 적 없는 사원증을 3.0~3.4초에 잠깐 빅파이로 잡습니다.
